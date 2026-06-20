@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div_1{
+            background-color: yellow;
+            height: 450px;
+            text-align: center;
+            line-height: 450px;
+            font-size: 60px;
+            transition: background 1s ease;
+        }
+        button{
+            margin-top: 20px;
+        }
+        #verde{
+            background: green;
+        }
+        #azul{
+            background: blue;
+        }
+        #vermelho{
+            background: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="div_1">Texto</div>
+    <br>
+    <button id="verde" onclick="verde()">Cor para Verde</button>
+    <br>
+    <button id="azul" onclick="azul()">Cor para Azul</button>
+    <br>
+    <button id="vermelho" onclick="vermelho()">Cor para Vermelho</button>
+
+    <script>
+        let div_color = document.getElementById('div_1')
+
+        function verde(){
+            div_color.style.background =  'green';
+        }
+        function azul(){
+            div_color.style.background = 'blue';
+        }
+        function vermelho(){
+            div_color.style.background = 'red';
+        }
+    </script>
+</body>
+</html>
