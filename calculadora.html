@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p id="p1">Digite a operação desejada:</p>
+    <p id="p2">Adição(1) <br> Subtração(2) <br> Multiplicação(3) <br> Divisão(4))</p>
+    <input type="number" id="escolha_op" placeholder="Digite aqui">
+    <p id="p3">Digite os numeros:</p>
+    <input type="number" id="numero_1" placeholder="Digite aqui">
+    <input type="number" id="numero_2" placeholder="Digite aqui">
+    <br>
+    <button id="botão" onclick="operações()">Resultado</button>
+    <br>
+    <div id="msg"></div>
+    <script>
+        function operações(){
+            let n1 = Number(document.getElementById("numero_1").value)
+            let n2 = Number(document.getElementById("numero_2").value)
+            let escolha = Number(document.getElementById("escolha_op").value)
+            let div_txt = document.getElementById("msg")
+            if (escolha==1){
+                div_txt.innerText = ` ${n1} + ${n2} vale ${n1+n2}`
+            }
+            else if (escolha==2){
+                div_txt.innerText = `${n1} - ${n2} vale ${n1-n2}`
+            }
+            else if (escolha==3){
+                div_txt.innerText = `${n1} * ${n2} vale ${n1*n2}`
+            }
+            else if (escolha==4){
+                div_txt.innerText = `${n1} / ${n2} vale ${n1/n2}`
+            }
+            else{
+                div_txt.innerText = 'Operação Invalida ou inexistente'
+            }
+        }
+    </script>
+</body>
+</html>
