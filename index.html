@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #res{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pedra , Papel , Tesoura:</h1>
+    <br>
+
+    <button onclick="escolha_jogador(1)">Jogar pedra</button>
+    <button onclick="escolha_jogador(2)">Jogar papel</button>
+    <button onclick="escolha_jogador(3)">Jogar tesoura</button>
+
+    <br>
+    <div id="res"></div>
+
+    <script>
+        function escolha_jogador(escolha_jogador){
+            let escolha_cpu = Math.floor(Math.random() * 3) + 1;
+            let div_txt = document.getElementById("res")
+            let cpu_txt
+
+            if (escolha_cpu==1){
+                cpu_txt = 'Pedra'
+            }
+            else if (escolha_cpu==2){
+                cpu_txt = 'Papel'
+            }
+            else{
+                cpu_txt = 'Tesoura'
+            }
+
+             if (escolha_jogador==1 && escolha_cpu==1){
+                div_txt.innerText = 'Empate' + ` A cpu escolheu ${cpu_txt}`;
+            }
+            else if (escolha_jogador==1 && escolha_cpu==2){
+                div_txt.innerText = 'Você perdeu' + ` A cpu escolheu ${cpu_txt}`
+            }
+            else if (escolha_jogador==1 && escolha_cpu==3){
+                div_txt.innerText = 'Você ganhou'+ ` A  cpu escolheu ${cpu_txt}`
+            }
+            else if (escolha_jogador==2 && escolha_cpu==2){
+                div_txt.innerText = 'Empate' +  ` A cpu escolheu ${cpu_txt} `
+            }
+            else if (escolha_jogador==2 && escolha_cpu==1){
+                div_txt.innerText = 'Você ganhou' + ` A cpu escolheu ${cpu_txt}`
+            }
+            else if (escolha_jogador==2 && escolha_cpu==3){
+                div_txt.innerText = 'Você perdeu' + ` A cpu escolheu ${cpu_txt}`
+            }
+            else if (escolha_jogador==3 && escolha_cpu==3){
+                div_txt.innerText = 'Empate' + ` A cpu escolheu ${cpu_txt}`
+            }
+            else if (escolha_jogador==3 && escolha_cpu==1){
+                div_txt.innerText = 'Você perdeu' + ` A cpu escolheu ${cpu_txt}`
+            }
+            else if (escolha_jogador==3 && escolha_cpu==2){
+                div_txt.innerText = 'Você ganhou' + ` A cpu escolheu ${cpu_txt}`
+            }
+            else{
+                return
+            }
+        }
+    </script>
+</body>
+</html>
